@@ -1,0 +1,39 @@
+@media screen and (max-width : 922px) {
+    #gambar .art .card-title-first{
+        font-size: 30px;
+        padding-left: 100px;
+    }
+
+    #gambar .art .card-text-first{
+        padding-left: 100px;
+    }
+}
+
+@media screen and (max-width : 576px) {
+    #gambar .art .card-title-first{
+        font-size: 22px;
+        padding-top: 0px;
+        padding-left: 0px;
+    }
+
+    #gambar .art .card-text-first{
+        padding-top: 2rem;
+        padding-left: 0px;
+
+    }
+
+    #gambar .art .card-text-second{
+        padding-top: 4rem;
+        padding-left: 0px;
+    }
+
+}
+
+@media screen and (max-width : 350px) {
+    
+}
+
+
+
+
+
