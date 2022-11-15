@@ -37,6 +37,11 @@
                                         {{ $message }}
                                     </div>
                                 @enderror
+                                {{-- @error('slug')
+                                    <div class="alert alert-danger mt-2">
+                                        {{ 'title ada yang sama' }}
+                                    </div>
+                                @enderror --}}
                             </div>
 
                             <div class="form-group">

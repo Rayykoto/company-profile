@@ -15,7 +15,7 @@ class ArticleController extends Controller
      */
     public function index()
     {
-        return view('article', [
+        return view('articles.index', [
             'articles' => Article::with('user')->latest()->get()
         ]);
     }
@@ -47,9 +47,11 @@ class ArticleController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show($slug)
     {
-        //
+        return view('articles.show', [
+            'articles'  => Article::where('slug', $slug)->first()
+        ]);
     }
 
     /**

@@ -1,5 +1,5 @@
 <!-- Footer -->
-    <section id="footer" style="background-image: url('web/assets/img/footer.png');">
+    <section id="footer" style="background-image: url({{ asset('web/assets/img/footer.png') }});">
         <div class="container">
             <div class="row">
                 <div class="foot col-md-5 ">

@@ -45,7 +45,8 @@ class ArticleController extends Controller
         $this->validate($request, [
             'title'         => 'required|min:5',
             'image'         => 'required|image|mimes:png,jpg|max:2048',
-            'description'   => 'required|min:10'
+            'description'   => 'required|min:10',
+            'slug'          => 'required|unique:articles'
         ]);
 
         //upload image

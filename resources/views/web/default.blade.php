@@ -5,6 +5,7 @@
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="csrf-token" content="{{ csrf_token() }}">
 
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
@@ -19,10 +20,10 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap" rel="stylesheet">
 
     <!-- My Style -->
-    <link rel="stylesheet" href="web/css/style.css">
+    <link rel="stylesheet" href="{{ asset('web/css/style.css') }}">
 
     <!-- Responsive My Style -->
-    <link rel="stylesheet" href="web/css/responsive.css">
+    <link rel="stylesheet" href="{{ asset('web/css/responsive.css') }}">
 
     <!-- Style Gile -->
     <link rel="stylesheet"
@@ -42,7 +43,8 @@
         @yield('content')
     </div>
 
-
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous">
     </script>
@@ -50,11 +52,9 @@
     <script src="https://kit.fontawesome.com/f68aafc95a.js" crossorigin="anonymous"></script>
 
     <!-- script JS My Style -->
-    {{-- <script src="web/js/script.js"> </script> --}}
+    <script src="web/js/script.js"> </script>
 
     <!-- Swiper JS -->
-    {{-- <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script> --}}
-
     <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
     
 

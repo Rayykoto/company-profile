@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Web;
 
 use App\Http\Controllers\Controller;
+use App\Models\Contact;
 use Illuminate\Http\Request;
 
 class ContactController extends Controller
@@ -35,7 +36,30 @@ class ContactController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'first_name'    => 'required',
+            'last_name'     => 'required',
+            // 'mail_to'       => 'required',
+            'mail_from'     => 'required',
+            'phone_number'  => 'required|digits_between:10, 13|numeric',
+            'message'       => 'required'
+        ]);
+
+        if($request->input('submit')) {
+            echo 'recaptcha tidak terpenuhi';
+        }
+
+        Contact::create ([
+            'first_name'    => $request->first_name,
+            'last_name'     => $request->last_name,
+            'mail_from'     => $request->mail_from,
+            'mail_to'       => 'ady@wynacom.com',
+            'phone_number'  => $request->phone_number,
+            'subject'       => 'Help',
+            'message'       => $request->message,
+        ]); 
+
+            return redirect()->back()->with(['success' => 'Thank you for contact us. we will contact you!.']);
     }
 
     /**

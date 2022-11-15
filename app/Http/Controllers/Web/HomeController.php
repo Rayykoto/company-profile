@@ -17,13 +17,16 @@ class HomeController extends Controller
      */
     public function __invoke(Request $request)
     {
+        
         $events = Article::latest()->first();
+        // $event = Event::where('id')->first();
 
         return view('home', [
             'lastarticle'   => $events,
             'secondarticle' => Article::where('id', '<>', $events->id)->orderby('id', 'desc')->first(),
             'thidrarticle'  => Article::oldest()->first(),
-            'events'        => Event::latest()->simplePaginate(1) 
+            'events'        => Event::latest()->simplePaginate(3),
+
         ]);
     }
 }

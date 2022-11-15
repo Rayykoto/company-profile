@@ -147,7 +147,6 @@
                     </div>
                 </div>
             </div>
-            <!-- <img src="assets/Assets/Hero Image.png" alt="" class="position-absolute end-0 bottom-0"> -->
         </div>
     </section>
 
@@ -231,17 +230,6 @@
             </div>
         </div>
     </section>
-
-    <!-- Gallery -->
-    <!-- <section id="galery">
-        <div class="container">
-            <div class="carousel">
-              <div class="carousel__face"><img src="assets/img/Map trans.png"></div>
-              <div class="carousel__face"><img src="assets/img/Map trans.png"></div>
-              <div class="carousel__face"><img src="assets/img/Map trans.png"></div>
-            </div>
-          </div>
-    </section> -->
 
     <!-- Gallery 2-->
     <section id="galery2">

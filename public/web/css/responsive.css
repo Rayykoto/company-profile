@@ -26,6 +26,26 @@
         padding-top: 4rem;
         padding-left: 0px;
     }
+    
+    #why {
+        padding: 20px 0;
+    }
+
+    #maps .map h2{
+        padding: 20px 0;
+    }
+
+    #event .card .tanggal{
+        flex: auto;
+    }
+
+    #event .hidden {
+        display: none;
+    }
+
+    #event .show {
+        display: contents;
+    }
 
 }
 
