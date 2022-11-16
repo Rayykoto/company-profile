@@ -52,7 +52,7 @@
     <script src="https://kit.fontawesome.com/f68aafc95a.js" crossorigin="anonymous"></script>
 
     <!-- script JS My Style -->
-    <script src="web/js/script.js"> </script>
+    <script src="{{ asset('web/js/script.js') }}"> </script>
 
     <!-- Swiper JS -->
     <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>

@@ -12,6 +12,10 @@ body {
     background-color: #fff;
 }
 
+.nav-item {
+    padding: 7px;
+}
+
 /* Navbar Color */
 
 .nav-color {
@@ -21,6 +25,7 @@ body {
 
 .bg-transparent {
     transition: all ease-in-out 0.3s;
+    padding: 0px;
 }
 
 * {
@@ -327,6 +332,7 @@ h2 {
 #form-contact .card-header {
     text-align: right;
     border-bottom: none;
+    padding: 0.7rem;
 }
 
 #title-product {

@@ -1,6 +1,12 @@
 @extends('web.default')
 
 @section('content')
+
+<section id="kosong">
+    <div class="container">
+    </div>
+</section>
+
 <!-- Hero Section -->
 <section id="header">
     <div id="home" class="head container-fluid">
@@ -172,7 +178,7 @@
                         <div class="card-text-first">
                             <h6><a href="{{ route('articles.show', $lastarticle->slug) }}">{{ $lastarticle->title }}</a>
                             </h6>
-                            <p>{{ $lastarticle->created_at }}
+                            <p>{{ $lastarticle->created_at->format('d M Y') }}
                                 <p>{!! $lastarticle->description !!}</p>
                         </div>
                     </div>
@@ -212,7 +218,7 @@
                 <h4>Upcoming Event</h4>
             </div>
             <div class="col-md-3">
-                <label class="pagination justify-content-end">{{ $events->fragment('articles')->links(); }}</label>
+                <label class="pagination justify-content-end">{{ $events->fragment('event')->links(); }}</label>
             </div>
 
             <div class="col-md-3">
@@ -220,7 +226,7 @@
             </div>
             <div class="col-md-3">
                 <label
-                    class="hidden pagination justify-content-end">{{ $events->fragment('articles')->links(); }}</label>
+                    class="hidden pagination justify-content-end">{{ $past_events->fragment('event')->links(); }}</label>
             </div>
         </div>
 
@@ -231,14 +237,14 @@
                 <div class="card mb-3" style="max-width: 450px; background-color: #edf2f2">
                     <div class="row g-0">
                         <div class="tanggal col-md-4 text-center pt-3">
-                            <h4 class="text-light">{{ ($event->created_at->formatLocalized('%d')) }}</h4>
-                            <h4 class="text-light">{{ ($event->created_at->formatLocalized('%b')),2 ,4 }}</h4>
+                            <h4 class="text-light">{{ (Carbon\Carbon::parse($event->start_date)->formatLocalized('%d')) }}</h4>
+                            <h4 class="text-light">{{ (Carbon\Carbon::parse($event->start_date)->formatLocalized('%b')),2,4 }}</h4>
                         </div>
                         <div class="col-md-8">
                             <div class="card-body">
                                 <a href="#articles" data-toggle="modal" data-target="#DataEvent"
                                     event_name="{{ $event->name }}" event_image="{{ $event->image }}"
-                                    event_start="{{ $event->start_date }}"
+                                    event_start="{{ (Carbon\Carbon::parse($event->start_date)->format('d M Y')) }}"
                                     event_description="{{ $event->description }}">
                                     <h5 class="card-title">{{ $event->name }}</h5>
                                 </a>
@@ -256,23 +262,28 @@
                     <h4>Upcoming Event</h4>
                 </div>
                 <div class="show col-md-3">
-                    <label class="pagination justify-content-end">{{ $events->fragment('articles')->links(); }}</label>
+                    <label class="pagination justify-content-end">{{ $past_events->fragment('event')->links(); }}</label>
                 </div>
             </div>
 
             <div class="mob col-md-6 pt-3">
-                @foreach ($events as $event)
+                @foreach ($past_events as $past_event)
                 <div class="card mb-3" style="max-width: 450px; background-color: #edf2f2">
                     <div class="row g-0">
                         <div class="tanggal col-md-4 text-center pt-3">
-                            <h4 class="text-light">{{ ($event->created_at->formatLocalized('%d')) }}</h4>
-                            <h4 class="text-light">{{ ($event->created_at->formatLocalized('%b')),2,4 }}</h4>
+                            <h4 class="text-light">{{ (Carbon\Carbon::parse($past_event->start_date)->formatLocalized('%d')) }}</h4>
+                            <h4 class="text-light">{{ (Carbon\Carbon::parse($past_event->start_date)->formatLocalized('%b')),2,4 }}</h4>
                         </div>
                         <div class="col-md-8">
                             <div class="card-body">
-                                <h5 class="card-title">{{ $event->name }}</h5>
+                                <a href="#articles" data-toggle="modal" data-target="#DataEvent"
+                                    event_name="{{ $past_event->name }}" event_image="{{ $past_event->image }}"
+                                    event_start="{{ (Carbon\Carbon::parse($event->start_date)->format('d M Y')) }}"
+                                    event_description="{{ $past_event->description }}">
+                                    <h5 class="card-title">{{ $past_event->name }}</h5>
+                                </a>
                                 <h6 class="card-text">Time : 08.00 - 13.00</h6>
-                                <h6 class="card-text">Location : {{ $event->location }}</h6>
+                                <h6 class="card-text">Location : {{ $past_event->location }}</h6>
                             </div>
                         </div>
                     </div>

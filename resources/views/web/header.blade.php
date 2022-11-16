@@ -3,7 +3,7 @@
     <nav class="navbar navbar-expand-lg navbar-dark bg-transparent position-fixed w-100">
         <div class="container">
             <a class="navbar-brand" href="{{ route('web.home') }}">
-                <img src="{{ asset('web/assets/img/logo.png') }}" alt="" width="275px;" class="d-inline-block align-text-top me-2">
+                <img src="{{ asset('web/assets/img/logo.png') }}" alt="" width="350px;" class="d-inline-block align-text-top me-2">
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
                 aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">

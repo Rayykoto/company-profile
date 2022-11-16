@@ -16,7 +16,7 @@
 <section id="data-article">
     <div class="container">
         <h4> {{ $articles->title }} </h4>
-        <p> ({{ $articles->user->name }}, {{ $articles->created_at }})
+        <p> ({{ $articles->user->name }}, {{ $articles->created_at->format('d M Y') }})
     </div>
 
     <div class="col-md-8 mx-auto">

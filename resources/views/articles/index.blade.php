@@ -19,12 +19,12 @@
         <div class="loop row">
             <div class="col-md-8 pt-3 mx-auto">
                 <h4>{{ $article->title }}</h4>
-                <p>({{ $article->user->name }}, {{ $article->created_at }})</p>
+                <p>({{ $article->user->name }}, {{ $article->created_at->format('d M Y') }})</p>
                 <br>
                 <p>{!! $article->description !!}</p>
             </div>
             <div class="data col-md-2">
-                <button type="button" class="btn btn-secondary btn-sm">Read More</button>
+                <a href="{{ route('articles.show', $article->slug) }}" class="btn btn-secondary btn-sm">Read More</a>
             </div>
             <div class="col-10 mx-auto">
                 <hr>
