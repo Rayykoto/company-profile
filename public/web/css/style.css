@@ -40,10 +40,10 @@ body {
     font-size: 16px;
 }
 
-#topheader .nav-link.active {
+/* #topheader .nav-link.active {
     font-weight: 700;
     color: #000;
-}
+} */
 
 /* header */
 
@@ -234,7 +234,7 @@ h2 {
 }
 
 #articles .art .card-text-second {
-    padding: 7rem 2rem;
+    padding: 6rem 2rem;
 }
 
 #articles .art .link {
@@ -294,15 +294,22 @@ h2 {
 
 /* footer */
 #footer {
-    padding: 100px 0;
+    padding: 50px 0;
     background-size: cover;
 }
 
 .foot h4 {
     color: #fff;
+    font-size: medium;
 }
 
 .foot p {
+    color: #fff;
+    font-size: small;
+}
+
+.foot h6{
+    font-family: Cambria;
     color: #fff;
 }
 
@@ -312,8 +319,8 @@ h2 {
 
 #contact {
     background-size: cover;
-    background-image: url("/web/assets/img/Header_page_contact_products-01.png");
-    padding: 75px 0;
+    background-image: url("/web/assets/img/header-wynacom-by.png");
+    padding: 50px 0;
     z-index: 1;
 }
 
@@ -324,7 +331,7 @@ h2 {
 
 #title-product {
     background-size: cover;
-    background-image: url("/web/assets/img/Header_page_contact_products-01.png");
+    background-image: url("/web/assets/img/header-wynacom-by.png");
     padding: 50px 0;
     z-index: 1;
 }
@@ -357,7 +364,7 @@ h2 {
 }
 
 #title-article {
-    padding: 5rem 3rem;
+    padding: 50px 0;
     background-image: url("/web/assets/img/header-wynacom-by.png");
     background-size: cover;
 }
@@ -383,7 +390,8 @@ a {
 /* MAPS */
 #maps2 {
     overflow: hidden;
-    padding-bottom: 45%;
+    padding-bottom: 50%;
+    padding-right: 20%;
     position: relative;
     height: 0;
 }

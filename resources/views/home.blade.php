@@ -170,7 +170,8 @@
                         <h5 class="card-title-first">Articles & Events</h5>
 
                         <div class="card-text-first">
-                            <h6><a href="{{ route('articles.show', $lastarticle->slug) }}">{{ $lastarticle->title }}</a></h6>
+                            <h6><a href="{{ route('articles.show', $lastarticle->slug) }}">{{ $lastarticle->title }}</a>
+                            </h6>
                             <p>{{ $lastarticle->created_at }}
                                 <p>{!! $lastarticle->description !!}</p>
                         </div>
@@ -182,7 +183,9 @@
                     <img src="{{ $secondarticle->image }}" class="card-img" alt="...">
                     <div class="art card-img-overlay">
                         <div class="card-text-second">
-                            <h6><a href="{{ route('articles.show', $secondarticle->slug) }}">{{ $secondarticle->title }}</a></h6>
+                            <h6><a
+                                    href="{{ route('articles.show', $secondarticle->slug) }}">{{ $secondarticle->title }}</a>
+                            </h6>
                             <p>{{ $secondarticle->created_at }}
                                 <p>{!! $secondarticle->description !!}</p>
                         </div>
@@ -193,13 +196,13 @@
                         <img src="web/assets/img/articles-2.jpg" class="art card-img" alt="Wynacom">
                         <div class="art card-img-overlay">
                             <div class="link">
-                            <h6><a href="{{ route('articles.index') }}">View All Articles</a></h6>
+                                <h6><a href="{{ route('articles.index') }}">View All Articles</a></h6>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
 </section>
 
 <section id="event">
@@ -214,9 +217,10 @@
 
             <div class="col-md-3">
                 <h4 class="hidden">Past Event</h4>
-            <div class="col-md-3">
-                <label class="pagination justify-content-end">{{ $events->fragment('articles')->links(); }}</label>
             </div>
+            <div class="col-md-3">
+                <label
+                    class="hidden pagination justify-content-end">{{ $events->fragment('articles')->links(); }}</label>
             </div>
         </div>
 
@@ -232,9 +236,12 @@
                         </div>
                         <div class="col-md-8">
                             <div class="card-body">
-                                <a href="#articles" data-toggle="modal" data-target="#DataEvent" event_name="{{ $event->name }}" event_image="{{ $event->image }}" 
-                                event_start="{{ $event->start_date }}" event_description="{{ $event->description }}">
-                                <h5 class="card-title">{{ $event->name }}</h5></a>
+                                <a href="#articles" data-toggle="modal" data-target="#DataEvent"
+                                    event_name="{{ $event->name }}" event_image="{{ $event->image }}"
+                                    event_start="{{ $event->start_date }}"
+                                    event_description="{{ $event->description }}">
+                                    <h5 class="card-title">{{ $event->name }}</h5>
+                                </a>
                                 <h6 class="card-text">Time : 08.00 - 13.00</h6>
                                 <h6 class="card-text">Location : {{ $event->location }}</h6>
                             </div>
@@ -243,14 +250,16 @@
                 </div>
                 @endforeach
             </div>
-                 
-                 <div class="show col-md-3">
-                     <h4>Past Event</h4>
-                 </div>
-                 <div class="show col-md-3">
-                     <label class="pagination justify-content-end">{{ $events->fragment('articles')->links(); }}</label>
-                 </div>
-        
+
+            <div class="show row">
+                <div class="show col-md-3">
+                    <h4>Upcoming Event</h4>
+                </div>
+                <div class="show col-md-3">
+                    <label class="pagination justify-content-end">{{ $events->fragment('articles')->links(); }}</label>
+                </div>
+            </div>
+
             <div class="mob col-md-6 pt-3">
                 @foreach ($events as $event)
                 <div class="card mb-3" style="max-width: 450px; background-color: #edf2f2">
@@ -281,7 +290,7 @@
     <div class="container-fluid">
         <div class="swiper-container position-relative">
             <div class="swiper-wrapper">
-                <div class="swiper-slide"><img src="web/assets/img/Map trans.png" alt=""></div>
+                <div class="swiper-slide"><img src="web/assets/gallery/Event Suramade 2022.jpeg" alt=""></div>
                 <div class="swiper-slide"><img src="web/assets/img/Wynacom-logo.png" alt=""></div>
                 <div class="swiper-slide"><img src="web/assets/img/Map trans.png" alt=""></div>
                 <div class="swiper-slide"><img src="web/assets/img/Wynacom-logo.png" alt=""></div>
@@ -295,7 +304,3 @@
 @include('components.modal-show')
 
 @endsection
-
- 
-
- 

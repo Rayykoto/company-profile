@@ -18,13 +18,13 @@
                         <a class="nav-link text-dark" href="{{ route('web.home') . '#why-us' }} ">Why Us?</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link text-dark" href="{{ route('product.index') . '#title-product'}}">Products</a>
+                        <a class="nav-link text-dark" href="{{ route('product.index') }}">Products</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link text-dark" href="{{ route('web.home') . '#articles' }}">Articles & Events</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link text-dark" href="{{ route('contact.index') . '#product' }}">Contact Us</a>
+                        <a class="nav-link text-dark" href="{{ route('contact.index') }}">Contact Us</a>
                     </li>
                 </ul>
             </div>

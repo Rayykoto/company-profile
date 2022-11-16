@@ -47,6 +47,36 @@
         display: contents;
     }
 
+    #products .dekstop {
+        display: none;
+    }
+
+    #products .mobile {
+        padding: 0;
+    }
+
+    #articles .art .card-title-first {
+        font-size: large;
+        padding-top: 10px;
+    }
+
+    #articles .art .card-text-first {
+        padding-top: 45px;
+        padding-left: 10px;
+        font-size: small;
+    }
+
+    #articles .art .card-title-second{
+        font-size: large;
+        padding-top: 10px;
+    }
+
+    #articles .art .card-text-second {
+        padding-top: 85px;
+        padding-left: 10px;
+        font-size: small;
+    }
+
 }
 
 @media screen and (max-width : 350px) {

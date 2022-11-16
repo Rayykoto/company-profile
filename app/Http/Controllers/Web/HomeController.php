@@ -25,7 +25,7 @@ class HomeController extends Controller
             'lastarticle'   => $events,
             'secondarticle' => Article::where('id', '<>', $events->id)->orderby('id', 'desc')->first(),
             'thidrarticle'  => Article::oldest()->first(),
-            'events'        => Event::latest()->simplePaginate(3),
+            'events'        => Event::latest()->simplePaginate(2),
 
         ]);
     }
