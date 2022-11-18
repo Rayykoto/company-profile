@@ -10,6 +10,21 @@
 }
 
 @media screen and (max-width : 576px) {
+
+    #headerMob{
+        display: block;
+    }
+
+    #headerMob .head{
+        padding-left: 0px;
+        padding-right: 0px;
+    }
+
+    #header{
+        display: none;
+    }
+
+
     #gambar .art .card-title-first{
         font-size: 22px;
         padding-top: 0px;
@@ -29,6 +44,15 @@
     
     #why {
         padding: 20px 0;
+    }
+
+    #why #why-us h2{
+        font-size: x-large;
+        padding-top: 1rem;
+    }
+
+    #why #why-us h3{
+        font-size: medium;
     }
 
     #maps .map h2{
@@ -52,12 +76,17 @@
     }
 
     #products .mobile {
+        display: contents;
+    }
+
+    #products .mobile {
         padding: 0;
     }
 
     #articles .art .card-title-first {
         font-size: large;
         padding-top: 10px;
+        padding-left: 10px;
     }
 
     #articles .art .card-text-first {
@@ -76,6 +105,59 @@
         padding-left: 10px;
         font-size: small;
     }
+    
+    #topheader .navbar-collapse{
+        background-color: white;
+    }
+
+    .nav-color {
+        background-color: white;
+        transition: all ease-in-out 0.3s;
+    }
+
+    #topheader .navbar-brand img{
+        width: 255px;
+    }
+
+    #misi .comp{
+        margin-top: -20px;
+    }
+
+    #misi .comp p{
+        font-size: small;
+    }
+
+    #misi h4{
+        font-size: large;
+    }
+
+    #misi p{
+        font-size: small;
+    }
+
+    #maps h2{
+        font-size: x-large;
+    }
+
+    #galery2 h2{
+        font-size: x-large;
+        padding-top: 1rem;
+    }
+
+    #galery2 .swiper-container{
+        width: 100%;
+        margin: 25px 0;
+        padding: 10px 0;
+    }
+
+    #why .kec {
+        height: 265px;  
+    }
+
+    #why .kec:hover {
+        height: 265px;
+    }
+
 
 }
 

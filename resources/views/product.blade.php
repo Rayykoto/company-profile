@@ -28,7 +28,7 @@
 </section>
 
 <section id="products">
-    <div class="container pt-5">
+    <div class="container">
         <div class="dekstop col-md-11 mx-auto">
             <img src="web/assets/img/products.png" class="img-fluid" alt="">
         </div>

@@ -101,7 +101,7 @@ function callbackCatch(error){
                     <div class="card-body">
                         <h5 class="card-title">Office</h5>
                         <i class="fas fa-map-marker"></i>
-                        Jl. Boulevard Barat Raya Blok LC7 No.15<br> &nbsp; &nbsp; Kelapa Gading Barat, Jakarta
+                        Jl. Boulevard Barat Raya Blok LC7 <br> &nbsp; &nbsp; No. 15 Kelapa Gading Barat, Jakarta
                         <br>
                         <i class="fas fa-phone-alt"></i>
                         +62 21 2245 2345 (Hunting)<br> &nbsp; &ensp;

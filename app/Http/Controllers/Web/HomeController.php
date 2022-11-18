@@ -28,8 +28,8 @@ class HomeController extends Controller
             'lastarticle'   => $events,
             'secondarticle' => Article::where('id', '<>', $events->id)->orderby('id', 'desc')->first(),
             'thidrarticle'  => Article::oldest()->first(),
-            'events'        => Event::latest()->whereDate('end_date', '>=', $now)->simplePaginate(3),
-            'past_events'   => Event::latest()->whereDate('end_date', '<', $now)->simplePaginate(3),
+            'events'        => Event::latest('start_date')->whereDate('end_date', '>=', $now)->simplePaginate(3),
+            'past_events'   => Event::latest('start_date')->whereDate('end_date', '<', $now)->simplePaginate(3),
         ]);
     }
 }

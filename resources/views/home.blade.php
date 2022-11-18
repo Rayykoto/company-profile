@@ -14,6 +14,12 @@
     </div>
 </section>
 
+<section id="headerMob">
+    <div id="home" class="head container-fluid">
+        <img src="web/assets/img/header_mobile.png" class="img-fluid" alt="responsive-image">
+    </div>
+</section>
+
 <!-- Why Us -->
 <section id="why">
     <div id="why-us" class="container">
@@ -67,11 +73,11 @@
             </div>
         </div>
 
-        <div class="row mt-5">
+        <div class="row">
             <div class="col-md-2">
 
             </div>
-            <div class="col-md-4">
+            <div class="kec col-md-4">
                 <div class="card-why text-center">
                     <div class="circle-icon position-relative mx-auto">
                         <img src="web/assets/Assets/icon_Accurate Analysis.png" style="width:64px; height:64px;" alt=""
@@ -192,7 +198,7 @@
                             <h6><a
                                     href="{{ route('articles.show', $secondarticle->slug) }}">{{ $secondarticle->title }}</a>
                             </h6>
-                            <p>{{ $secondarticle->created_at }}
+                            <p>{{ $secondarticle->created_at->format('d M Y') }}
                                 <p>{!! $secondarticle->description !!}</p>
                         </div>
                     </div>
@@ -214,15 +220,15 @@
 <section id="event">
     <div id="articles" class="container">
         <div class="row">
-            <div class="col-md-3">
-                <h4>Upcoming Event</h4>
+            <div class="col-md-4">
+                <h4>Upcoming Events</h4>
             </div>
-            <div class="col-md-3">
+            <div class="col-md-2">
                 <label class="pagination justify-content-end">{{ $events->fragment('event')->links(); }}</label>
             </div>
 
             <div class="col-md-3">
-                <h4 class="hidden">Past Event</h4>
+                <h4 class="hidden">Past Events</h4>
             </div>
             <div class="col-md-3">
                 <label
@@ -234,11 +240,13 @@
             <div class="mob col-md-6 pt-3">
                 <?php $num = 60?>
                 @foreach ($events as $event)
-                <div class="card mb-3" style="max-width: 450px; background-color: #edf2f2">
+                <div class="card mb-3" style="max-width: 500px; background-color: #edf2f2">
                     <div class="row g-0">
                         <div class="tanggal col-md-4 text-center pt-3">
-                            <h4 class="text-light">{{ (Carbon\Carbon::parse($event->start_date)->formatLocalized('%d')) }}</h4>
-                            <h4 class="text-light">{{ (Carbon\Carbon::parse($event->start_date)->formatLocalized('%b')),2,4 }}</h4>
+                            <h4 class="text-light">
+                                {{ (Carbon\Carbon::parse($event->start_date)->formatLocalized('%d')) }}</h4>
+                            <h4 class="text-light">
+                                {{ (Carbon\Carbon::parse($event->start_date)->formatLocalized('%b')),2,4 }}</h4>
                         </div>
                         <div class="col-md-8">
                             <div class="card-body">
@@ -248,8 +256,8 @@
                                     event_description="{{ $event->description }}">
                                     <h5 class="card-title">{{ $event->name }}</h5>
                                 </a>
-                                <h6 class="card-text">Time : 08.00 - 13.00</h6>
-                                <h6 class="card-text">Location : {{ $event->location }}</h6>
+                                <h6 class="card-text">Time : 18.00 - Selesai</h6>
+                                <h6 class="card-text">Venue : {{ $event->location }}</h6>
                             </div>
                         </div>
                     </div>
@@ -259,31 +267,34 @@
 
             <div class="show row">
                 <div class="show col-md-3">
-                    <h4>Upcoming Event</h4>
+                    <h4>Past Events</h4>
                 </div>
                 <div class="show col-md-3">
-                    <label class="pagination justify-content-end">{{ $past_events->fragment('event')->links(); }}</label>
+                    <label
+                        class="pagination justify-content-end">{{ $past_events->fragment('event')->links(); }}</label>
                 </div>
             </div>
 
             <div class="mob col-md-6 pt-3">
                 @foreach ($past_events as $past_event)
-                <div class="card mb-3" style="max-width: 450px; background-color: #edf2f2">
+                <div class="card mb-3" style="max-width: 500px; background-color: #edf2f2">
                     <div class="row g-0">
                         <div class="tanggal col-md-4 text-center pt-3">
-                            <h4 class="text-light">{{ (Carbon\Carbon::parse($past_event->start_date)->formatLocalized('%d')) }}</h4>
-                            <h4 class="text-light">{{ (Carbon\Carbon::parse($past_event->start_date)->formatLocalized('%b')),2,4 }}</h4>
+                            <h4 class="text-light">
+                                {{ (Carbon\Carbon::parse($past_event->start_date)->formatLocalized('%d')) }}</h4>
+                            <h4 class="text-light">
+                                {{ (Carbon\Carbon::parse($past_event->start_date)->formatLocalized('%b')),2,4 }}</h4>
                         </div>
                         <div class="col-md-8">
                             <div class="card-body">
                                 <a href="#articles" data-toggle="modal" data-target="#DataEvent"
                                     event_name="{{ $past_event->name }}" event_image="{{ $past_event->image }}"
-                                    event_start="{{ (Carbon\Carbon::parse($event->start_date)->format('d M Y')) }}"
+                                    event_start="{{ Carbon\Carbon::parse($past_event->start_date)->format('d M Y') }}"
                                     event_description="{{ $past_event->description }}">
                                     <h5 class="card-title">{{ $past_event->name }}</h5>
                                 </a>
-                                <h6 class="card-text">Time : 08.00 - 13.00</h6>
-                                <h6 class="card-text">Location : {{ $past_event->location }}</h6>
+                                <h6 class="card-text">Time : 08.00 - Selesai</h6>
+                                <h6 class="card-text">Venue : {{ $past_event->location }}</h6>
                             </div>
                         </div>
                     </div>
@@ -302,7 +313,7 @@
         <div class="swiper-container position-relative">
             <div class="swiper-wrapper">
                 <div class="swiper-slide"><img src="web/assets/gallery/Event Suramade 2022.jpeg" alt=""></div>
-                <div class="swiper-slide"><img src="web/assets/img/Wynacom-logo.png" alt=""></div>
+                <div class="swiper-slide"><img src="web/assets/gallery/event all.jpeg" alt=""></div>
                 <div class="swiper-slide"><img src="web/assets/img/Map trans.png" alt=""></div>
                 <div class="swiper-slide"><img src="web/assets/img/Wynacom-logo.png" alt=""></div>
             </div>

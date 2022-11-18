@@ -23,6 +23,10 @@ body {
     transition: all ease-in-out 0.3s;
 }
 
+/* .nav-mobile {
+    display: none;
+} */
+
 .bg-transparent {
     transition: all ease-in-out 0.3s;
     padding: 0px;
@@ -52,10 +56,15 @@ body {
 
 /* header */
 
+#headerMob {
+    display: none;
+}
+
 #header .head {
     padding-left: 0px;
     padding-right: 0px;
 }
+
 
 .card .img-fluid {
     /* width: 100%; */
@@ -419,4 +428,8 @@ a {
 .navbar-dark .navbar-toggler-icon {
     background-image: url("/web/assets/img/toggler.png");
     ;
+}
+
+#products .mobile{
+    display: none;
 }

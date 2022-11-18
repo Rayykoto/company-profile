@@ -25,7 +25,7 @@
                     </p>
                 </div>
                 <div class="foot col-md-11 mx-auto pt-5">
-                <h6>&copy;2022 PT. WYNACOM UNITAMA SEJAHTERA | Made By ♥ | Yana Trisha</h6>
+                <h6>&copy;2022 PT. WYNACOM UNITAMA SEJAHTERA</h6>
             </div>
             </div>
         </div>

@@ -1,4 +1,6 @@
+
 const navbar = document.getElementsByTagName('nav')[0];
+// const mediaQuery = window.matchMedia('(min-width: 768px)')
 window.addEventListener('scroll', function() {
     if (window.scrollY > 0) {
         navbar.classList.replace('bg-transparent', 'nav-color')
@@ -6,6 +8,7 @@ window.addEventListener('scroll', function() {
         navbar.classList.replace('nav-color', 'bg-transparent')
     }
 });
+
 
 $("[data-trigger]").on("click", function(){
     var trigger_id =  $(this).attr('data-trigger');
