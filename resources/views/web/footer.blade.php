@@ -13,7 +13,7 @@
                 <div class="foot col-md-5">
                     <h4>Our Office</h4>
                     <p>
-                        Jl. Boulevard Barat Raya Blok LC7 No.15<br>Kelapa Gading Barat, Jakarta
+                        Jl. Boulevard Barat Raya Blok LC7 No.15<br>Kelapa Gading Barat, Jakarta Utara, <br>Jakarta, Indonesia, 14240
                     </p>
                 </div>
                 <div class="foot col-md-2">

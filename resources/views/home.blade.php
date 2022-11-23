@@ -41,11 +41,11 @@
                     </div>
                     <h3 class="mt-4">Customized Solution</h3>
                     <p class="mt-3">
-                        Every laboratory has different standard procedures.
-                        As such, a system should be adaptable to its needs.
-                        WYN@Health is a fully customized system, adapted
-                        to the needs and Standard of Procedure to optimize
-                        results while conforming to ISO standards.
+                        Each laboratory has different standard procedures that require a system that adapts to its
+                        needs.
+                        WYN@Health offers fully customizable systems that adapt to the individual
+                        needs and standards of procedures of each lab while optimizing results and conforming to ISO
+                        standards.
                     </p>
                 </div>
             </div>
@@ -57,11 +57,9 @@
                     </div>
                     <h3 class="mt-4">Dependable System</h3>
                     <p class="mt-3">
-                        Records the laboratory test process in a detailed,
-                        structured and accurate. As well as simplify the
-                        process of pre-analytic, analytic and post-analytic.
-                        The process is electronically traceable and
-                        reducesuser errors.
+                        Our dependable system records the laboratory tests in a detailed, structured,
+                        and accurate process through both pre and post analytic stages.
+                        This results in a reduced user error and electronically traceable system.
                     </p>
                 </div>
             </div>
@@ -121,13 +119,11 @@
             <div class="comp col-md-10 mx-auto">
                 <h3 class="mt-4">Company's Profile</h3>
                 <p class="mt-3">
-                    Established since 2003, PT. Wynacom Unitama Sejahtera is WYN@Health Laboratory Information and
-                    other healthcare system provider.
-                    Also appointed as sole distributor of Phlebotomy Labeling System from Energium - Korea. Having
-                    implementation sites in more than 50
-                    cities all over Indonesia ranging from hospitals, laboratory clinics, diagnostics and testing
-                    centres, we customize solutions to your needs,
-                    providing a dependable system and accurate analysis for your patients' safety.
+                    Established in 2003, PT. Wynacom Unitama Sejahtera provides WYN@Health and other healthcare systems.
+                    We are the sole distributor of Energium Korea’s Phlebotomy Labelling System.
+                    We implement our dependable systems in hospitals, laboratories, clinics,
+                    and diagnostic and testing centres in both public and private sectors for over 50 cities all over
+                    Indonesia.
                 </p>
             </div>
         </div>
@@ -220,88 +216,27 @@
 <section id="event">
     <div id="articles" class="container">
         <div class="row">
-            <div class="col-md-4">
-                <h4>Upcoming Events</h4>
-            </div>
-            <div class="col-md-2">
-                <label class="pagination justify-content-end">{{ $events->fragment('event')->links(); }}</label>
-            </div>
-
-            <div class="col-md-3">
-                <h4 class="hidden">Past Events</h4>
-            </div>
-            <div class="col-md-3">
-                <label
-                    class="hidden pagination justify-content-end">{{ $past_events->fragment('event')->links(); }}</label>
-            </div>
+            <!-- component pagination dekstop for event -->
         </div>
 
         <div class="row">
-            <div class="mob col-md-6 pt-3">
-                <?php $num = 60?>
-                @foreach ($events as $event)
-                <div class="card mb-3" style="max-width: 500px; background-color: #edf2f2">
-                    <div class="row g-0">
-                        <div class="tanggal col-md-4 text-center pt-3">
-                            <h4 class="text-light">
-                                {{ (Carbon\Carbon::parse($event->start_date)->formatLocalized('%d')) }}</h4>
-                            <h4 class="text-light">
-                                {{ (Carbon\Carbon::parse($event->start_date)->formatLocalized('%b')),2,4 }}</h4>
-                        </div>
-                        <div class="col-md-8">
-                            <div class="card-body">
-                                <a href="#articles" data-toggle="modal" data-target="#DataEvent"
-                                    event_name="{{ $event->name }}" event_image="{{ $event->image }}"
-                                    event_start="{{ (Carbon\Carbon::parse($event->start_date)->format('d M Y')) }}"
-                                    event_description="{{ $event->description }}">
-                                    <h5 class="card-title">{{ $event->name }}</h5>
-                                </a>
-                                <h6 class="card-text">Time : 18.00 - Selesai</h6>
-                                <h6 class="card-text">Venue : {{ $event->location }}</h6>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                @endforeach
+            <div class="mob col-md-6 pt-3" id="upcoming_events">
+                @include('components.upcoming_event')
             </div>
 
             <div class="show row">
                 <div class="show col-md-3">
                     <h4>Past Events</h4>
                 </div>
-                <div class="show col-md-3">
-                    <label
-                        class="pagination justify-content-end">{{ $past_events->fragment('event')->links(); }}</label>
-                </div>
-            </div>
-
-            <div class="mob col-md-6 pt-3">
-                @foreach ($past_events as $past_event)
-                <div class="card mb-3" style="max-width: 500px; background-color: #edf2f2">
-                    <div class="row g-0">
-                        <div class="tanggal col-md-4 text-center pt-3">
-                            <h4 class="text-light">
-                                {{ (Carbon\Carbon::parse($past_event->start_date)->formatLocalized('%d')) }}</h4>
-                            <h4 class="text-light">
-                                {{ (Carbon\Carbon::parse($past_event->start_date)->formatLocalized('%b')),2,4 }}</h4>
-                        </div>
-                        <div class="col-md-8">
-                            <div class="card-body">
-                                <a href="#articles" data-toggle="modal" data-target="#DataEvent"
-                                    event_name="{{ $past_event->name }}" event_image="{{ $past_event->image }}"
-                                    event_start="{{ Carbon\Carbon::parse($past_event->start_date)->format('d M Y') }}"
-                                    event_description="{{ $past_event->description }}">
-                                    <h5 class="card-title">{{ $past_event->name }}</h5>
-                                </a>
-                                <h6 class="card-text">Time : 08.00 - Selesai</h6>
-                                <h6 class="card-text">Venue : {{ $past_event->location }}</h6>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                @endforeach
-            </div>
+                {{-- <div class="show col-md-3">
+                    <label class="pagination justify-content-end">{{ $past_events->links(); }}</label>
+            </div> --}}
         </div>
+
+        <div class="mob col-md-6 pt-3" id="past_events">
+            @include('components.past_event')
+        </div>
+    </div>
     </div>
 </section>
 <!-- EVENT 2 -->
@@ -324,5 +259,44 @@
 </section>
 
 @include('components.modal-show')
+
+<script>
+    $(document).ready(function () {
+
+        $('#upcoming_events').on('click', '.page-link', function (event) {
+            event.preventDefault();
+            var page = $(this).attr('href').split('page=')[1];
+            fetch_upcoming(page);
+        })
+
+        $('#past_events').on('click', '.page-link', function (event) {
+            event.preventDefault();
+            var page = $(this).attr('href').split('page=')[1];
+            fetch_past(page);
+        });
+
+        function fetch_past(page) {
+            $.ajax({
+                type: "GET",
+                url: "/past_event?page=" + page,
+                success: function (data) {
+                    $('#past_events').html(data);
+                }
+            });
+        }
+
+        function fetch_upcoming(page) {
+            $.ajax({
+                type: "GET",
+                url: "/upcoming_event?page=" + page,
+                success: function (data) {
+                    $('#upcoming_events').html(data);
+                }
+            });
+        }
+
+    });
+
+</script>
 
 @endsection

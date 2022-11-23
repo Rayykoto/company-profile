@@ -40,9 +40,8 @@
         <button type="button" class="btn btn-outline-dark">Download Brochure</button>
     </div>
 
-    <div class="col-11 mx-auto">
-        <hr class="text-dark" style="height: 2px; border-radius: 2px;">
-    </div>
+        <hr class="text-dark" style="width: 81%; margin: auto; height: 2px;">
+    
 </section>
 
 <section id="header-energium">

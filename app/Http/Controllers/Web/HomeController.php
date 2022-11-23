@@ -21,15 +21,39 @@ class HomeController extends Controller
         $now = Carbon::today()->toDateString();
 
         // dd($now);
-        $events = Article::latest()->first();
-        // $event = Event::where('id')->first();
+        $article        = Article::latest()->first();
+        $events         = Event::latest()->whereDate('end_date', '>=', $now)->simplePaginate(3);
+        $past_events    = Event::latest()->whereDate('end_date', '<', $now)->simplePaginate(3);
+
+        // if ($request->ajax()) {
+        //     return view('components.upcoming_event', ['events' => $events])->render();
+        // }
 
         return view('home', [
-            'lastarticle'   => $events,
-            'secondarticle' => Article::where('id', '<>', $events->id)->orderby('id', 'desc')->first(),
+            'lastarticle'   => $article,
+            'secondarticle' => Article::where('id', '<>', $article->id)->orderby('id', 'desc')->first(),
             'thidrarticle'  => Article::oldest()->first(),
-            'events'        => Event::latest('start_date')->whereDate('end_date', '>=', $now)->simplePaginate(3),
-            'past_events'   => Event::latest('start_date')->whereDate('end_date', '<', $now)->simplePaginate(3),
+            'events'        => $events,
+            'past_events'   => $past_events,
         ]);
+    }
+
+    function past_event(Request $request)
+    {
+        $now = Carbon::today()->toDateString();
+        $past_events    = Event::latest()->whereDate('end_date', '<', $now)->simplePaginate(3);
+        // dd(compact('past_events'));
+        if ($request->ajax()) {
+            return view('components.past_event', compact('past_events'))->render();
+        }
+    }
+    function upcoming_event(Request $request)
+    {
+        $now = Carbon::today()->toDateString();
+        $events         = Event::latest()->whereDate('end_date', '>=', $now)->simplePaginate(3);
+        // dd(compact('events'));
+        if ($request->ajax()) {
+            return view('components.upcoming_event', compact('events'))->render();
+        }
     }
 }

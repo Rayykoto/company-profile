@@ -1,32 +1,33 @@
 @extends('web.default')
-   
+
 @section('content')
 
 
 <script type="text/javascript">
-function callbackThen(response) {
-    // read Promise object
-    response.json().then(function(data) {
-        console.log(data);
-        if(data.success && data.score > 0.5) {
-            alert('Recaptcha Success');
-        } else {
-            document.getElementById('registerForm').addEventListener('submit', function(event) {
-                event.preventDefault();
-                alert('Recaptcha Error');
-            });
-        }
-    });
-}
- 
-function callbackCatch(error){
-    console.error('Error:', error)
-}
+    function callbackThen(response) {
+        // read Promise object
+        response.json().then(function (data) {
+            console.log(data);
+            if (data.success && data.score > 0.5) {
+                //response
+            } else {
+                document.getElementById('registerForm').addEventListener('submit', function (event) {
+                    event.preventDefault();
+                    alert('Recaptcha Error');
+                });
+            }
+        });
+    }
+
+    function callbackCatch(error) {
+        console.error('Error:', error)
+    }
+
 </script>
-     
+
 {!! htmlScriptTagJsApi([
-    'callback_then' => 'callbackThen',
-    'callback_catch' => 'callbackCatch',
+'callback_then' => 'callbackThen',
+'callback_catch' => 'callbackCatch',
 ]) !!}
 
 <section id="kosong">
@@ -98,10 +99,11 @@ function callbackCatch(error){
             <div class="col-md-4">
                 <label></label>
                 <div class="card border-dark mb-3">
-                    <div class="card-body">
+                    <div class="map card-body">
                         <h5 class="card-title">Office</h5>
-                        <i class="fas fa-map-marker"></i>
-                        Jl. Boulevard Barat Raya Blok LC7 <br> &nbsp; &nbsp; No. 15 Kelapa Gading Barat, Jakarta
+                        <a href="{{ route('contact.index') . '#maps2' }}"><i class="fas fa-map-marker"></i></a>
+                        Jl. Boulevard Barat Raya Blok LC7 No. 15, <br> &nbsp; &nbsp; Kelapa Gading Barat, Jakarta
+                        Utara,<br> &nbsp; &nbsp; Jakarta, Indonesia, 14240
                         <br>
                         <i class="fas fa-phone-alt"></i>
                         +62 21 2245 2345 (Hunting)<br> &nbsp; &ensp;

@@ -19,6 +19,8 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', HomeController::class)->name('web.home');
 Route::resource('/contact', ContactController::class);
 Route::resource('/product', ProductController::class);
+Route::get('/past_event', [HomeController::class, 'past_event']);
+Route::get('/upcoming_event', [HomeController::class,'upcoming_event']);
 Route::resource('/articles', \App\Http\Controllers\Web\ArticleController::class);
 // Route::get('home', HomeController::class)
 

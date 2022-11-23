@@ -344,6 +344,14 @@ h2 {
     padding: 0.7rem;
 }
 
+#form-contact .card-title{
+    font-size: medium;
+}
+
+#form-contact .card-body{
+    font-size: small;
+}
+
 #title-product {
     background-size: cover;
     background-image: url("/web/assets/img/header-wynacom-by.png");
@@ -370,7 +378,7 @@ h2 {
 
 #products .button-brochure {
     text-align: right;
-    padding: 1.5rem 6.7rem;
+    padding: 1.5rem 7.4rem;
 }
 
 #energium .button-brochure {
@@ -427,9 +435,13 @@ a {
 
 .navbar-dark .navbar-toggler-icon {
     background-image: url("/web/assets/img/toggler.png");
-    ;
+    width: 20px;
 }
 
 #products .mobile{
     display: none;
+}
+
+#form-contact .map i{
+    color: #000;
 }
