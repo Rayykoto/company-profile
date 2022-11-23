@@ -1,8 +1,10 @@
-<div class="col-md-6">
-    <h4>Upcoming Events</h4>
-</div>
-<div class="col-md-6">
-    <label class="pagination justify-content-end">{{ $events->fragment('event')->links(); }}</label>
+<div class="row">
+    <div class="col-md-8">
+        <h4>Upcoming Events</h4>
+    </div>
+    <div class="col-md-4">
+        <label class="pagination justify-content-end">{{ $events->fragment('event')->links(); }}</label>
+    </div>
 </div>
 
 
