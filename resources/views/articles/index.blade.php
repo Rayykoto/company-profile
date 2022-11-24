@@ -21,7 +21,7 @@
                 <h4>{{ $article->title }}</h4>
                 <p>({{ $article->user->name }}, {{ $article->created_at->format('d M Y') }})</p>
                 <br>
-                <p>{!! $article->description !!}</p>
+                <p>{!! words($article->description) !!}</p>
             </div>
             <div class="data col-md-2">
                 <a href="{{ route('articles.show', $article->slug) }}" class="btn btn-secondary btn-sm">Read More</a>
