@@ -190,7 +190,7 @@
                             <h6><a href="{{ route('articles.show', $lastarticle->slug) }}">{{ $lastarticle->title }}</a>
                             </h6>
                             <p>{{ $lastarticle->created_at->format('d M Y') }}
-                                <p>{!! $lastarticle->description !!}</p>
+                                <p>{!! words($lastarticle->description) !!}</p>
                         </div>
                     </div>
                 </div>
@@ -204,7 +204,7 @@
                                     href="{{ route('articles.show', $secondarticle->slug) }}">{{ $secondarticle->title }}</a>
                             </h6>
                             <p>{{ $secondarticle->created_at->format('d M Y') }}
-                                <p>{!! $secondarticle->description !!}</p>
+                                <p>{!! words($secondarticle->description) !!}</p>
                         </div>
                     </div>
                 </div>
