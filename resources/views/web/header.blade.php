@@ -26,6 +26,12 @@
                     <li class="nav-item">
                         <a class="nav-link text-dark" href="{{ route('contact.index') }}">Contact Us</a>
                     </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-dark" href="{{ route('web.home') . '#customer' }}">Our Customers</a>
+                    </li>
+                    <li class="nav-item">
+                        <img src="{{ asset('web/assets/img/logowynhealth.png') }}" style="width: ; height:55px; border:none; margin-top:-13px;" class="img-thumbnail" alt="...">
+                    </li>
                 </ul>
             </div>
         </div>

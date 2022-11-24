@@ -52,6 +52,19 @@
                 <form method="POST" action="{{ route('contact.store') }}" id="registerForm">
                     {{ csrf_field() }}
                     <div class="row">
+
+                        <div class="form-group">
+                            <label></label>
+                            <select class="form-select" aria-label="Default select example">
+                                <option selected>Mail To</option>
+                                <option value="marketing@wynacom.com">Marketing</option>
+                                <option value="ifC@wynacom.com">IFC</option>
+                                <option value="lis@wynacom.com<">LIS</option>
+                                <option value="regkey@wynacom.com">RegKey</option>
+                                <option value="adm@wynacom.com">Admin</option>
+                            </select>
+                        </div>
+
                         <div class="form-group col">
                             <label></label>
                             <input type="text" class="form-control" placeholder="First name" name="first_name">
@@ -129,8 +142,8 @@
                         <br><br>
                         <h5 class="card-title">Social Media</h5>
                         <i class="fab fa-facebook-f"></i> &emsp;
-                        <i class="fab fa-linkedin-in"></i> &emsp;
-                        <i class="fab fa-instagram"></i>
+                        <a href="https://www.linkedin.com/company/wynacom/"><i class="fab fa-linkedin-in"></i></a> &emsp;                 
+                        <a href="https://www.instagram.com/wynacom/"><i class="fab fa-instagram"></i></a>
                     </div>
                 </div>
             </div>
@@ -139,7 +152,7 @@
 </section>
 
 <section id="maps2">
-    <div class="container-fluid img-fluid">
+    <div class="container-fluid img-fluid mt-5">
         <iframe
             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3966.8091574236396!2d106.89681631399458!3d-6.156309062052771!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69f5ce06e414f1%3A0xe2b431c2145a129!2sPT.%20WYNACOM%20UNITAMA%20SEJAHTERA!5e0!3m2!1sid!2sid!4v1667803881775!5m2!1sid!2sid"
             width="1300" height="600" style="border:0;" allowfullscreen="" loading="lazy"

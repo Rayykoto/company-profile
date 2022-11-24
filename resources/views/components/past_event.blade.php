@@ -26,6 +26,7 @@
                     event_description="{{ $past_event->description }}">
                     <h5 class="card-title">{{ $past_event->name }}</h5>
                 </a>
+                <h6 class="card-text">Date : {{ Carbon\Carbon::parse($past_event->start_date)->format('d M Y') .' - '. Carbon\Carbon::parse($past_event->end_date)->format('d M Y') }} </h6>
                 <h6 class="card-text">Time : 08.00 - Selesai</h6>
                 <h6 class="card-text">Venue : {{ $past_event->location }}</h6>
             </div>

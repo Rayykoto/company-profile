@@ -166,6 +166,15 @@
     </div>
 </section>
 
+<!-- cust list -->
+<section id="customer">
+    <div class="container">
+        <div class="map col-12 text-center">
+            <h2 class="mt-3 pt-100">Our Customers</h2>
+        </div>
+        <img src="web/assets/img/cust-list.png" class="img-fluid" alt="responsive-image">
+    </div>
+</section>
 
 <!-- Gambar -->
 <section id="articles">

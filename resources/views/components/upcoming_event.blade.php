@@ -26,6 +26,7 @@
                     event_description="{{ $event->description }}">
                     <h5 class="card-title">{{ $event->name }}</h5>
                 </a>
+                <h6 class="card-text">Date : {{ Carbon\Carbon::parse($event->start_date)->format('d M Y') .' - '. Carbon\Carbon::parse($event->end_date)->format('d M Y') }} </h6>
                 <h6 class="card-text">Time : 18.00 - Selesai</h6>
                 <h6 class="card-text">Venue : {{ $event->location }}</h6>
             </div>

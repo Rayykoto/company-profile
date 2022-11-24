@@ -13,7 +13,7 @@ body {
 }
 
 .nav-item {
-    padding: 7px;
+    padding: 3px;
 }
 
 /* Navbar Color */
@@ -412,11 +412,32 @@ a {
 
 /* MAPS */
 #maps2 {
+    width: 100%;
     overflow: hidden;
-    padding-bottom: 50%;
+    padding-bottom: 55%;
     padding-right: 20%;
     position: relative;
     height: 0;
+}
+
+.iframe-container {
+    margin-bottom: 50px;
+    position: relative;
+    width: 100%;
+    padding-bottom: 56.25%;
+}
+
+.iframe-container > * {
+    display: block;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    margin: 0;
+    padding: 0;
+    height: 80%;
+    width: 100%;
 }
 
 #event_image .img-fluid {
@@ -444,4 +465,10 @@ a {
 
 #form-contact .map i{
     color: #000;
+}
+
+/* Customer List */
+#customer .img-fluid {
+    padding: 80px 0;
+    z-index: 1;
 }

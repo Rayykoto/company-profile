@@ -20,8 +20,8 @@
                     <h4>Follow Us</h4>
                     <p>
                         <i class="fab fa-facebook-f"></i> &emsp;
-                        <i class="fab fa-linkedin-in"></i> &emsp;                 
-                        <i class="fab fa-instagram"></i>
+                        <a href="https://www.linkedin.com/company/wynacom/"><i class="fab fa-linkedin-in"></i></a> &emsp;                 
+                        <a href="https://www.instagram.com/wynacom/"><i class="fab fa-instagram"></i></a>
                     </p>
                 </div>
                 <div class="foot col-md-11 mx-auto pt-5">
